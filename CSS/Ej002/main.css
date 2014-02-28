@@ -1,5 +1,16 @@
-* {border: 1px solid #000;
-   box-sizing: border-box; 
+* {box-sizing: border-box; 
+}
+
+
+.wrapper:before, .wrapper:after,
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.wrapper:after,
+.clearfix:after {
+    clear: both;
 }
 
 table {width: 100%;}
@@ -9,7 +20,7 @@ html, body {
 }
 
 body {
-    font: 14pt/1.48em "Source Sans Pro", sans-serif;
+    font: 12pt/1.48em "Source Sans Pro", sans-serif;
     color: #464646;  
 }
 
@@ -37,10 +48,46 @@ ul { margin: 0; }
 .big { font-weight: 1.5em; }
 .uppercase { text-transform: uppercase; }
 .list { list-style: none; padding: 0; }
-.list-blue { padding-left: 20px; }
-.center {}
+.list-blue li {
+    background: transparent url("../img/blue.png") no-repeat 0 0;
+    padding-left: 20px;
+}
+.center { text-align: center; }
+.list p { margin: 0; }
+.list li { padding: 20px 0;}
+.txt-blue { color: #00F;}
 
-/* To do */
+/* To do
+
+Balines
+Tablas
+Pie
+
+*/
+
+.imagen { max-width: 100%;
+}
+
+.marco { background-color: #FFF;
+         padding: 10px;
+         box-shadow: 0 0 5px #cdcdcd;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+}
+
+.breadcrumbs li:after {
+    content: "/";
+}
+
+.breadcrumbs li.actual:after {
+    content: "";
+}
+
+.breadcrumbs li:last-child:after {
+    content: "";
+}
 
 /* Colores */
 
@@ -71,4 +118,29 @@ ul { margin: 0; }
     text-transform: uppercase;
     list-style: none;
     padding: 0;
+}
+
+.price { font-size: 1.5em; font-weight: bold;}
+
+/* Botones */
+
+.btn {
+    display: inline-block;
+    color: #FFF;
+    width: 100px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px #cdcdcd;
+    background-image: Linear-gradient(to bottom, #999, #CCC);
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-red {
+     background-image: Linear-gradient(to bottom, #F74040 80%, #D33535);  
+}
+
+.btn-big {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
