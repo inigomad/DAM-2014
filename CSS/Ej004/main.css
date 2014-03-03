@@ -1,0 +1,5 @@
+li:nth-child(n+1) { font-size: 1em; }
+li:nth-child(n+2) { font-size: 2em; -webkit-transition: all 4s ease;}
+li:nth-child(n+3) { font-size: 3em; }
+li:nth-child(n+4) { font-size: 4em; }
+li:nth-child(n+5) { font-size: 5em; }
