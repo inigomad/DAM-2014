@@ -6,7 +6,7 @@ var APP = APP || {};
 
 
 APP.validador = (function() {
-    "use strict"
+    "use strict";
 
     window.$ = Element.prototype.$ = function(selector) {
         var that = (this instanceof Element) ? this : document;

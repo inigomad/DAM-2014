@@ -1,15 +1,33 @@
-HTMLFormElement.prototype.validar = function() {
-    "use strict"
+HTMLFormElement.prototype.validar = function(opts) {
+    "use strict";
 
 
-    var hijos = this.querySelectorAll('input[data-validator], textarea[data-validator], select[data-validator]');
+    var hijos = this.querySelectorAll('[data-validator]');
 
 
+    var creaAviso = function (campo, tipo){
+        if (campo.parentNode.querySelectorAll('div.' + tipo.clase + '.' + campo.name).length === 0) {
+            var aviso = document.createElement('div');
+            var mensaje = document.createTextNode('< ' + tipo.msg);
+            aviso.appendChild(mensaje);
+            aviso.classList.add(tipo.clase);
+            aviso.classList.add(campo.name);
+            campo.parentNode.insertBefore(aviso,campo.nextSibling);
 
+
+        }
+    };
+
+    var borraAviso = function (campo, tipo){
+            var nodo = campo.parentNode.querySelectorAll('div.' + tipo.clase + '.' + campo.name);
+            nodo[0].parentNode.removeChild(nodo[0]);
+    };
 
     var checkField = function(e) {
 
         //  console.log("Soy: " + this.dataset.validator);
+
+        
 
         switch (this.dataset.validator) {
             case "required":
@@ -21,8 +39,10 @@ HTMLFormElement.prototype.validar = function() {
 
                     {
                         this.labels[0].classList.add("red-txt");
+                        creaAviso(this,opts.condiciones);
                     } else {
                         this.labels[0].classList.remove("red-txt");
+                        borraAviso(this,opts.condiciones);
                     }
                 }
 
@@ -33,43 +53,52 @@ HTMLFormElement.prototype.validar = function() {
 
                 {
                     this.classList.add("red-bg");
+                    creaAviso(this,opts.required);
+
                 } else {
                     this.classList.remove("red-bg");
+                    borraAviso(this,opts.required);
                 }
                 break;
             case "email":
-                var test = APP.validador.email(this.value);
+                test = APP.validador.email(this.value);
                 console.log(test);
                 if (!test)
 
                 {
                     this.classList.add("red-bg");
+                    creaAviso(this,opts.email);
                 } else {
                     this.classList.remove("red-bg");
+                    borraAviso(this,opts.email);
                 }
                 break;
             case "password":
-                var test = APP.validador.password(this.value);
+                test = APP.validador.password(this.value);
                 console.log(test);
                 if (!test)
 
                 {
                     this.classList.add("red-bg");
+                    creaAviso(this,opts.password);
                 } else {
                     this.classList.remove("red-bg");
+                    borraAviso(this,opts.password);
                 }
                 break;
             case "min":
 
 
-                var test = APP.validador.min(this.value, this.dataset.length)
+                test = APP.validador.min(this.value, this.dataset.length);
                 console.log(test);
                 if (!test)
 
                 {
                     this.classList.add("red-bg");
+                    creaAviso(this,opts.textarea);
                 } else {
                     this.classList.remove("red-bg");
+                    borraAviso(this,opts.textarea);
                 }
                 break;
             default:
@@ -86,16 +115,19 @@ HTMLFormElement.prototype.validar = function() {
 
 
 
-        if (hijos[i].dataset.validator != undefined)
+        if (hijos[i].dataset.validator !== undefined)
             var selfVal = hijos[i].dataset.validator; {
             hijos[i].addEventListener("blur", checkField);
+            hijos[i].addEventListener("keyup", checkField);
+            hijos[i].addEventListener("keydown", checkField);
+            hijos[i].addEventListener("change", checkField);
             hijos[i].addEventListener("checkMe", checkField);
 
 
         }
 
 
-    };
+    }
 
 
     // var hijosTA = this.querySelectorAll('textarea');
@@ -126,7 +158,7 @@ HTMLFormElement.prototype.validar = function() {
 
                 hijos[i].dispatchEvent(event);
 
-            };
+            }
 
             // for (var i = hijosTA.length - 1; i >= 0; i--) {
 
