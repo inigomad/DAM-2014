@@ -8,7 +8,7 @@ HTMLFormElement.prototype.validar = function(opts) {
     var creaAviso = function (campo, tipo){
         if (campo.parentNode.querySelectorAll('div.' + tipo.clase + '.' + campo.name).length === 0) {
             var aviso = document.createElement('div');
-            var mensaje = document.createTextNode('< ' + tipo.msg);
+            var mensaje = document.createTextNode(tipo.msg);
             aviso.appendChild(mensaje);
             aviso.classList.add(tipo.clase);
             aviso.classList.add(campo.name);

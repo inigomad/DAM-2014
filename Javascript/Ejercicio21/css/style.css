@@ -31,14 +31,38 @@ body {font-family: arial, helvetica;}
     color: #F00;
 }
 
-.error-requerido { position: absolute;
-                   padding: 0.1em;
-                   background-color: #F55;  
-                   margin-left:570px;
-                   margin-top:-21px; 
-                   font-size: 0.7em;
-                   border-radius: 0.4em;
-                   border: 1px solid;
+.error-requerido {
+    position: absolute;
+    background: #F55;
+    border: 1px solid #c2e1f5;
+    padding: 0.2em;
+    margin-left:570px;
+    margin-top:-22px;
+    font-size: 0.7em; 
+
+}
+.error-requerido:after, .error-requerido:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.error-requerido:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-right-color: #F55;
+    border-width: 8px;
+    margin-top: -8px;
+}
+.error-requerido:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-right-color: #c2e1f5;
+    border-width: 9px;
+    margin-top: -9px;
 }
 
 .excedido-textarea { position: absolute;
