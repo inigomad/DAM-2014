@@ -11,10 +11,6 @@ $(document).ready(function(){
     $li = $('#myListItem');
     console.log($li[0]);
 
-    var $input = $('input.input_text');
-    var $label = $input.closest('form')
-        .find('label[for="' + $input.attr('name') + '"]');
-    console.log($label);
 
     var $ocultos = $(':hidden');
     console.log($ocultos.length);
@@ -22,8 +18,8 @@ $(document).ready(function(){
     var $imgs = $('img[alt]');
     console.log($imgs.length);
 
-    var $filas = $('tbody tr:odd').css('background-color','gray');
-    console.log($filas.length);
+//  var $filas = $('tbody tr:odd').css('background-color','gray');
+//  console.log($filas.length);
 
     $imgs.each(function(idx, el){
         console.log(el.alt);
@@ -84,4 +80,69 @@ $(document).ready(function(){
 
     $nuevo.append($imgs.first().clone()).insertAfter($div);
 
-});
+    var $input = $('input.input_text');
+    var $label = $input.closest('form')
+        .find('label[for="' + $input.attr('name') + '"]');
+    
+    $input.val($label.text());
+    $label.hide();
+    $input.addClass('hint');
+    $input.on('keypress',function(){
+            if ($input.val() === $label.text()) {
+                $input.val("");
+            }
+    });
+
+    $input.on('click',function(){
+            if ($input.val() === $label.text()) {
+            setTimeout(function(){
+                $input[0].setSelectionRange(0,0);
+            }, 0);
+        }
+            
+    });
+
+    $input.on('blur',function(){
+            if($input.val() === "" || $input.val() === $label.text())
+                {
+                    $input.val($label.text());
+                }
+    });
+
+    var $divmodule = $('div.module');
+    var $nuevalista = $('<ul/>', {
+        'id' : 'milista',
+        'class' : 'tabs'
+    });
+
+    $divmodule.hide();
+
+    var $lis = [];
+    $divmodule.each(function() {
+        var $div = $(this);
+        var $li = $('<li/>', {
+            'text' : $div.find('h2').first().text()
+        });
+
+        $li.data('contentDiv',$div);
+
+        $lis.push($li[0]);
+
+    });
+
+    $nuevalista.append($lis).insertBefore($divmodule.first());
+
+    $(document).on('click', '.tabs li', function(){
+            $(this).addClass('current').siblings('.current').removeClass('current');
+            $(this).data('contentDiv').show().siblings('.module').hide();
+        }); 
+
+
+    $(document).on('hover','#nav li',function(index, val) {
+         
+             $(this).find('ul').toggle();
+         
+        });
+
+    });
+
