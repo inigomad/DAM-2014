@@ -1,7 +1,7 @@
 $(function(){
 
     var peticiones = [];
-    var index = 0;
+    var index = -1;
 
     $peticion = function() {
         $.ajax({
