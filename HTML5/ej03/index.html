@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+
+    <form>
+
+        Email: <input type="email"><br>
+        Url: <input type="url"><br>
+        Date: <input type="date"><br>
+        Time: <input type="time"><br>
+        Datetime: <input type="datetime"><br>
+        Month: <input type="month"><br>
+        Week: <input type="week"><br>
+        Number: <input type="number"><br>
+        Range: <input id="rango" type="range" min='1' max='100000' step='1' onchange="document.getElementById('lcd').value=document.getElementById('rango').value"><input id="lcd" type="text"><br>
+        Tel: <input type="tel"><br>
+        Search: <input type="search"><br>
+        Color: <input type="color"><br>
+
+        Datalist: <input id="Provincias" type="text" list="milista">
+        <datalist id="milista">
+            <option label="Albacete" value="Albacete" />
+            <option label="Logroño" value="Logroño" />
+            <option label="Cuenca" value="Cuenca" />
+        </datalist><br>
+        Caja de texto 1: <input name="auto" type="text" autofocus="autofocus" placeholder="Escribe aquí, garrulo" required="required" autocomplete><br />
+        Número entre 0 y 10: <input type="number" name="cantidad" min="1" max="10"><br />
+        Pilla archivos: <input type="file" multiple="multiple"><br />
+        Password: <input type="password" pattern="^[0-9]([0-9]|[a-zA-Z]){6,}[A-Z]" name="part"><br />
+        Progreso: <progress id="progreso" max="17" value="0"></progress><br /><br />
+        <input type="submit" value="Enviar">
+
+    </form>
+
+<script type="text/javascript" src="modernizr.js"></script>
+<script src="jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>

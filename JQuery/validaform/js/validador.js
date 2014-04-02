@@ -1,28 +1,29 @@
-var APP = APP || {};
-APP.validador = function() {
+var App = App || {};
+App.filtros = (function() {
     "use strict";
     window.$ = Element.prototype.$ = function(a) {
         var b = this instanceof Element ? this : document,
             c = b.querySelectorAll(a);
         return 1 === c.length ? c[0] : c;
     };
-    var a = function(a) {
-        return void 0 !== a && null !== a && a.length > 0 && !/\s+/.test(a);
-    }, b = function(a) {
-            var b = /^(\w+)((\.|-|_)(\w+))*@(\w+)(\.\w{2,})+$/;
-            return b.test(a);
-        }, c = function(a) {
-            var b = /[a-z]/,
-                c = /[A-Z]/,
-                d = /[0-9]/;
-            return b.test(a) && c.test(a) && d.test(a) && a.length > 5 && this.required(a);
-        }, d = function(a, b) {
-            return a.length < b;
-        };
-    return {
-        required: a,
-        email: b,
-        password: c,
-        min: d
+
+    var filtro = function(maquinas,filtros) {
+
+        var $m_filtradas = ['{"id:1","contenido:[\'bebidas\',\'comida\',\'otros\']"}'];
+
+        for (var i = maquinas.length - 1; i >= 0; i--) {
+            for (var j = maquinas[j].contenido.length - 1; j >= 0; j--) {
+                if ($.inArray(maquinas[i].contenido[j],filtros) > -1) $m_filtradas.push(maquinas[i]);
+            }
+        }
+
+        console.log(m_filtradas);
+       
+       return m_filtradas;
+    
     };
-}();
+
+    return {
+        filtro : filtro
+    };
+})();

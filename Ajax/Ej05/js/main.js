@@ -1,9 +1,88 @@
 $(function(){
 
     $(document).on('click','#comprobar', function(e){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         $.ajax({
             url : '../servidor/compruebaDisponibilidadJSON.php', 
-            data : {},
+            data : {login : $('#login').val()},
             datatype : 'json',
             type : 'post',
             cache : false,

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+
+    <video id="mivideo" preload style="width:90%">
+        <source src="video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="video.webm" type='video/webm; codecs="vp8, vorbis"'>
+        <p>Su navegador no soporta video.
+        Puede descargar el video en formato <a href="video.webm">webM</a>
+        o <a href="video.mp4">MP4</a></p>
+    </video>
+
+    <br>
+
+    <progress id='progreso' max='100' value='0'></progress><br>
+
+    <input id="playbtn" type="button" value="Play">
+    <input id="pausabtn" type="button" value="Pause">
+    <input id="stopbtn" type="button" value="Stop">
+    <input id="retrbtn" type="button" value="<<">
+    <input id="avanbtn" type="button" value=">>">
+    <input id="iniciobtn" type="button" value="Inicio">
+    <input id="finbtn" type="button" value="Fin">
+    <input id="fscrbtn" type="button" value="Pantalla completa">
+    <input id="volumen" type="range" min='0' max='100' step='1' value='100'>
+    v: <span id="valvol"></span>
+
+
+
+<script src="jquery-2.1.0.min.js"></script>
+<script src="main.js"></script>
+
+
+</body>
+</html>
