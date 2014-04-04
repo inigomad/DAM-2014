@@ -13,7 +13,7 @@ $(document).ready(function(){
     progreso.style.width = '90%';
 
     mivideo.addEventListener('timeupdate', function() {
-        var percent = Math.floor((100 / mivideo.duration) * mivideo.currentTime);
+        var percent = Math.floor((1000 / mivideo.duration) * mivideo.currentTime);
         progreso.value = percent;
     }, false);
 
