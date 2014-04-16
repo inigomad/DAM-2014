@@ -1,0 +1,22 @@
+[{
+        "user": "1",
+        "nombre": "Pedro",
+        "imagen": "vaca.jpg"
+    }, {
+        "user": "2",
+        "nombre": "Antonio",
+        "imagen": "elemento.jpg"
+    },{
+        "user": "3",
+        "nombre": "Juan",
+        "imagen": "bebe.jpg"
+    },{
+        "user": "4",
+        "nombre": "Pepe",
+        "imagen": "leche.jpg"
+    },{
+        "user": "5",
+        "nombre": "Julio",
+        "imagen": "tonto.jpg"
+    }
+]

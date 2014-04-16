@@ -1,0 +1,12 @@
+html{background:white;color:black}
+body{font:normal medium 'Gill Sans','Gill Sans MT','Goudy Bookletter 1911','Linux Libertine O','Liberation Serif',Candara,serif;padding:0;margin:0 auto;width:40em;line-height:1.75;word-spacing:0.1em}
+a{background:transparent;text-decoration:none;border-bottom:1px dotted}
+a:hover{border-bottom:1px solid}
+a:link{color:#1b67c9}
+a:visited{color:darkorchid}
+h1{letter-spacing:1em;text-align:center;margin:0}
+header{margin:0;padding:1.75em 0}
+header h2{text-align:center;line-height:2.154;font-weight: normal}
+nav ul{margin:0;padding:0 1em 0 0;text-align:center}
+nav li{display:inline;padding-left:1em}
+img{float:left;border:1px solid;margin:10px}

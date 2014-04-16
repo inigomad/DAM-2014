@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="principal">
+
+  <header data-role="header" data-position="fixed">
+    <a href="#principal" data-ajax="false" data-role="button" data-icon="home">Home</a>
+    <h1>Página principal</h1>
+    <a href="#panel" data-role="button" data-icon="grid">Opciones</a>
+  </header><!-- /header -->
+
+  <section id="panel" data-role="panel" data-display="overlay" data-position="right">
+    <p>Panel de control</p>
+    <p></p>
+    <a href="#principal" data-rel="close" data-role="button" data-icon="delete">Cerrar</a>
+  </section>
+
+  <div role="main" class="ui-content">
+    <p>Esta es la página principal</p>
+    <p>Ir a la página <a href="#segunda">segunda (interna)</a></p>
+    <p>Ir a la página <a href="#tercera">tercera (interna)</a></p>
+    <p>Ir a la página <a href="#cuarta">cuarta (interna)</a></p>
+    <p>Ir a una página <a href="page2.html" data-ajax="false">externa</a></p>
+  </div><!-- /content -->
+
+  <div data-role="footer">
+    <h4>Pie de página</h4>
+  </div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="segunda">
+
+  <header data-role="header" data-position="fixed">
+    <a href="#principal" data-ajax="false" data-role="button" data-icon="home">Home</a>
+    <h1>Segunda página</h1>
+    <a href="#panel" data-role="button" data-icon="grid">Opciones</a>
+  </header><!-- /header -->
+
+  <section id="panel" data-role="panel" data-display="overlay" data-position="right">
+    <p>Panel de control</p>
+    <p></p>
+    <a href="#segunda" data-rel="close" data-role="button" data-icon="delete">Cerrar</a>
+  </section>
+
+  <div role="main" class="ui-content">
+    <p>Esta es la seguna página interna</p>
+    <div class="ui-grid-a">
+      <div class="ui-block-a"><a href="#principal" data-role="button" data-theme="c">Anterior</a></div>
+      <div class="ui-block-b"><a href="#tercera" data-role="button" data-theme="c">Siguiente</a></div>    
+    </div>
+    <div class="ui-grid-solo">
+      <div class="ui-block-a"><a href="#infopopup" data-role="button" data-theme="b" data-rel="popup" data-trastition="pop">Info</a></div>
+    </div>
+  </div><!-- /content -->
+
+ <div id="infopopup" data-role="popup">
+    <div data-role="collapsible-set">
+      <div data-role="collapsible">
+      <h3>Mostrar tipo uno</h3>
+      <p>Tipo 1</p>
+      </div>
+
+      <div data-role="collapsible">
+      <h3>Mostrar tipo dos</h3>
+      <p>Tipo 2</p>
+      </div>
+
+      <div data-role="collapsible">
+      <h3>Mostrar tipo tres</h3>
+      <p>Tipo 3</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div data-role="footer">
+    <h4>Pie de página</h4>
+  </div><!-- /footer -->
+</div><!-- /page -->
+
+<div data-role="page" id="tercera">
+
+  <header data-role="header" data-position="fixed">
+    <a href="#principal" data-ajax="false" data-role="button" data-icon="home">Home</a>
+    <h1>Tercera página</h1>
+    <a href="#panel" data-role="button" data-icon="grid">Opciones</a>
+  </header><!-- /header -->
+
+  <section id="panel" data-role="panel" data-display="overlay" data-position="right">
+    <p>Panel de control</p>
+    <p></p>
+    <a href="#tercera" data-rel="close" data-role="button" data-icon="delete">Cerrar</a>
+  </section>
+
+  <div role="main" class="ui-content">
+    <p>Esta es la tercera página interna</p>
+    <p><a href="#principal">Volver</a></p>
+  </div><!-- /content -->
+
+  <div data-role="footer">
+    <h4>Pie de página</h4>
+  </div><!-- /footer -->
+</div><!-- /page -->
+
+<div data-role="page" id="cuarta">
+
+  <header data-role="header" data-position="fixed">
+    <a href="#principal" data-ajax="false" data-role="button" data-icon="home">Home</a>
+    <h1>Cuarta página</h1>
+    <a href="#panel" data-role="button" data-icon="grid">Opciones</a>
+  </header><!-- /header -->
+
+  <section id="panel" data-role="panel" data-display="overlay" data-position="right">
+    <p>Panel de control</p>
+    <p></p>
+    <a href="#cuarta" data-rel="close" data-role="button" data-icon="delete">Cerrar</a>
+  </section>
+
+  <div role="main" class="ui-content">
+    <p>Esta es la cuarta página interna</p>
+
+      <h2>Ejemplo de formulario</h2>
+      <div class="ui-body ui-body-a">
+
+        <div data-role="fieldcontain">
+             <label for="name-b">Campo de texto:</label>
+             <input type="text" name="name" id="name-b" value=""  />
+        </div>
+
+        <div data-role="fieldcontain">
+          <label for="switch-b">Flip:</label>
+          <select name="switch-b" id="switch-b" data-role="slider">
+            <option value="off">Off</option>
+            <option value="on">On</option>
+          </select> 
+        </div>
+
+        <div data-role="fieldcontain">
+          <label for="slider-b">Slider:</label>
+          <input type="range" name="slider" id="slider-b" value="0" min="0" max="100"  />
+        </div>
+
+
+        <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Estilo de texto:</legend>
+            <input type="checkbox" name="checkbox-6b" id="checkbox-6b" class="custom" />
+          <label for="checkbox-6b">b</label>
+
+          <input type="checkbox" name="checkbox-7b" id="checkbox-7b" class="custom" />
+          <label for="checkbox-7b"><em>i</em></label>
+
+          <input type="checkbox" name="checkbox-8b" id="checkbox-8b" class="custom" />
+          <label for="checkbox-8b">u</label>    
+          </fieldset>
+        </div>
+
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+              <legend>Elige un modelo:</legend>
+                  <input type="radio" name="radio-choice-1" id="radio-choice-1b" value="choice-1" />
+                  <label for="radio-choice-1b">Fiesta</label>
+
+                  <input type="radio" name="radio-choice-1" id="radio-choice-2b" value="choice-2"  />
+                  <label for="radio-choice-2b">Mondeo</label>
+
+                  <input type="radio" name="radio-choice-1" id="radio-choice-3b" value="choice-3"  />
+                  <label for="radio-choice-3b">Focus</label>
+
+                  <input type="radio" name="radio-choice-1" id="radio-choice-4b" value="choice-4"  />
+                  <label for="radio-choice-4b">C-Max</label>
+            </fieldset>
+        </div>
+
+        <div data-role="fieldcontain">
+          <label for="select-choice-b" class="select">Elige carrocería:</label>
+          <select name="select-choice-b" id="select-choice-b">
+            <option value="standard">3 puertas</option>
+            <option value="rush">5 puertas</option>
+            <option value="express">Familiar</option>
+            <option value="overnight">Monovolumen</option>
+          </select>
+        </div>
+
+        
+        </div><!-- /body-b -->
+    <p><a href="#principal">Volver</a></p>
+  </div><!-- /content -->
+
+  <div data-role="footer">
+    <h4>Pie de página</h4>
+  </div><!-- /footer -->
+</div><!-- /page -->
+
+<script src="js/main.js"></script>
+</body>
+</html>

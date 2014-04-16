@@ -1,0 +1,15 @@
+Box-sizing: para cambiar las propiedades y que el width de la caja tenga en cuenta el border, padding, etc.
+
+prefix-free: utilidad javascript que evita tener que usar los prefijos en las propiedades css para diferentes navegadores
+
+En Google, css button generator, o shadow generator, para crear botones en tiempo real
+
+Google Fonts, tropecientas fuentes libres
+
+Fontsquirrel: permite convertir fuentes (TTF u otros formatos) para poder usarlas en web
+
+javascript: developer.mozilla.org
+
+Can I use... Web para saber lo que pueden o no pueden hacer los navegadores
+
+Kinetic: Libreria para trabajar con canvas
