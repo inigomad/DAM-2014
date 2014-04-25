@@ -5,11 +5,18 @@ define('data',['ydn-db'], function() {
     var storename = 'tweets';
     var db = new ydn.db.Storage(dbname);
 
+    var lanzarEvento = function(){
+
+        var event = new Event('datachange');
+        document.dispatchEvent(event);
+
+    };
 
     var putTweet = function(tweet, success, error){
 
         var req = db.put({name: storename, keyPath: 'id'}, tweet);
         req.done(function(key){
+            lanzarEvento();
             success(key,tweet.text);
         });
         req.fail(function(e){
@@ -20,8 +27,12 @@ define('data',['ydn-db'], function() {
     var addTweets = function(tweets, success, error){
 
         var req = db.add({name: storename, keyPath: 'id'}, tweets);
-        req.done(success);
+        req.done(function(){
+            lanzarEvento();
+            success();
+        });
         req.fail(error);
+
     };
 
     var getTweet = function(id, success, error){

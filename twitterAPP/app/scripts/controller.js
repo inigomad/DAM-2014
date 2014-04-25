@@ -1,4 +1,4 @@
-define('controller', ['data','service'], function(DB, srv){
+define('controller', ['data','service','ui'], function(DB, srv, ui){
     'use strict';
 
 
@@ -34,7 +34,18 @@ define('controller', ['data','service'], function(DB, srv){
         },error);
     };
 
+    var showLatestTweets = function(){
+        // Get latest data from data provider
+        DB.getAllTweets(function(tweets){
+
+            ui.showTweetsList(tweets,function(){},function(){});
+            
+        }, function(err){console.log(err);});
+        // Update views
+    };
+
     return {
-        getTweetsFromTwitter : getTweetsFromTwitter
+        getTweetsFromTwitter : getTweetsFromTwitter,
+        showLatestTweets : showLatestTweets
     };
 });

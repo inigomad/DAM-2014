@@ -1,8 +1,10 @@
-define('service', ['jquery'], function($){
+define('service', ['quo'], function($){
     'use strict';
 
+    console.log();
+
     var getTweets = function(config, success, error) {
-        console.log('Version jQuery: '+ $().jquery);
+        console.log($);
         $.ajax({
             url : '/app/data/tweets.json',
             dataType : 'json',
